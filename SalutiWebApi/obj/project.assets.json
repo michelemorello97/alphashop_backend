@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/michele/Scrivania/Progetto_csharp_angular/SalutiWebApi/SalutiWebApi.csproj",
+      "projectUniqueName": "/home/michele/Scrivania/Progetto_csharp_angular/alphashop_backend/SalutiWebApi/SalutiWebApi.csproj",
       "projectName": "SalutiWebApi",
-      "projectPath": "/home/michele/Scrivania/Progetto_csharp_angular/SalutiWebApi/SalutiWebApi.csproj",
+      "projectPath": "/home/michele/Scrivania/Progetto_csharp_angular/alphashop_backend/SalutiWebApi/SalutiWebApi.csproj",
       "packagesPath": "/home/michele/.nuget/packages/",
-      "outputPath": "/home/michele/Scrivania/Progetto_csharp_angular/SalutiWebApi/obj/",
+      "outputPath": "/home/michele/Scrivania/Progetto_csharp_angular/alphashop_backend/SalutiWebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/michele/.nuget/NuGet/NuGet.Config"
