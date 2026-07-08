@@ -16,6 +16,23 @@ namespace SalutiWebApi.controllers
         }
 
         [HttpGet("{Nome}")]
-        public string GetSaluti(string Nome) => string.Format("\"Saluti, {0} sono il tuo primo web service creato con c# in .NET 10.0\"", Nome);
+        public string GetSaluti(string Nome)
+        {
+            try
+            {
+                if(Nome == "Michele")
+                {
+                    throw new Exception("\"Errore: L'utente Michele è disabilitato!\"");
+                }
+                else
+                {
+                    return string.Format("\"Saluti, {0} sono il tuo primo web service creato con c# in .NET 10.0\"", Nome);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }
