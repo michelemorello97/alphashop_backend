@@ -30,5 +30,12 @@ namespace ArticoliWebService.Models
         public int? IdFamAss { get; set; }
         public string IdStatoArt { get; set; }
         public DateTime? DataCreazione { get; set; }
+
+        //proprietà di collegamento classi models
+
+        public virtual ICollection<Ean> BarCode { get; set; }
+        public virtual Ingredienti ingredienti { get; set; }
+        public virtual Iva iva { get; set; }
+        public virtual FamAssort famAssort { get; set; }      
     }
 }
