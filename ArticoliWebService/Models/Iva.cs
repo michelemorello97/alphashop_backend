@@ -11,7 +11,7 @@ namespace ArticoliWebService.Models
         [Key]
         public int IdIva { get; set; }
 
-        public string Descrizione { get; set; }
+        public string? Descrizione { get; set; }
 
         [Required]
         public Int16 Aliquota { get; set; }

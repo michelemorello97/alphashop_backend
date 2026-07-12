@@ -11,7 +11,7 @@ namespace ArticoliWebService.Models
         [Key]
         public int Id { get; set; }
 
-        public string Descrizione { get; set; }
+        public string? Descrizione { get; set; }
 
         //proprietà di collegamento classi models
 

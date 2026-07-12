@@ -8,14 +8,14 @@ namespace ArticoliWebService.Models
 {
     public class Ean
     {
-        public string CodArt { get; set; }
+        public string? CodArt { get; set; }
         
         [Key]
         [StringLength(13, MinimumLength = 8, ErrorMessage = "Il Barcode deve essere da 8 a 13 cifre.")]
-        public string BarCode { get; set; }
+        public string? BarCode { get; set; }
 
         [Required]
-        public string IdTipoArt { get; set; }
+        public string? IdTipoArt { get; set; }
 
         //proprietà di collegamento classi models
 
