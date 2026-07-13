@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArticoliWebService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdd1208ac2efc1eeaa4746004f53127bfc6af0b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c26f5c837100edbc46948fdc13c263e28a9054d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArticoliWebService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArticoliWebService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
