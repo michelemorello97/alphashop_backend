@@ -9,14 +9,23 @@ namespace ArticoliWebService.Services
 {
     public class AlphaShopDbContext : DbContext
     {
-        public AlphaShopDbContext(DbContextOptions<AlphaShopDbContext> options) : base(options)
-        {}
+        protected readonly IConfiguration Configuration;
+        public AlphaShopDbContext(DbContextOptions<AlphaShopDbContext> options, IConfiguration configuration) : base(options)
+        {
+            Configuration = configuration;
+        }
 
         public virtual DbSet<Articoli> Articoli { get; set; }
         public virtual DbSet<Ean> BarCode { get; set; }
         public virtual DbSet<FamAssort> FamAssort { get; set; }
         public virtual DbSet<Ingredienti> Ingredienti { get; set; }
         public virtual DbSet<Iva> Iva { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            var connectionString = Configuration.GetConnectionString("alphaShopDbConString");
+            options.UseSqlServer(connectionString);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
