@@ -9,7 +9,7 @@ namespace ArticoliWebService.Services
     public interface IArticoliRepository
     {
         //metodi di selezione
-        ICollection<Articoli> SelArticoliByDescrizione(string Descrizione);
+        IEnumerable<Articoli> SelArticoliByDescrizione(string Descrizione);
 
         Articoli SelArticoloByCodice(string Code);
 

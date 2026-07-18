@@ -15,11 +15,11 @@ namespace ArticoliWebService.Services
             Configuration = configuration;
         }
 
-        public virtual DbSet<Articoli> Articoli { get; set; }
-        public virtual DbSet<Ean> BarCode { get; set; }
-        public virtual DbSet<FamAssort> FamAssort { get; set; }
-        public virtual DbSet<Ingredienti> Ingredienti { get; set; }
-        public virtual DbSet<Iva> Iva { get; set; }
+        public virtual DbSet<Articoli> Articoli => Set<Articoli>();
+        public virtual DbSet<Ean> BarCode => Set<Ean>();
+        public virtual DbSet<FamAssort> FamAssort => Set<FamAssort>();
+        public virtual DbSet<Ingredienti> Ingredienti => Set<Ingredienti>();
+        public virtual DbSet<Iva> Iva => Set<Iva>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -29,7 +29,7 @@ namespace ArticoliWebService.Services
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Ean>().HasKey(a => new {a.CodArt});
+            modelBuilder.Entity<Articoli>().HasKey(a => new {a.CodArt});
 
             //Relazione one to many (uno a molti) fra Articoli e Barcode
             modelBuilder.Entity<Ean>()
