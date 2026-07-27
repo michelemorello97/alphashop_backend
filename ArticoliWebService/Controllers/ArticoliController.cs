@@ -25,10 +25,10 @@ namespace ArticoliWebService.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(200, Type = typeof(IEnumerable<ArticoliDto>))]
-        public IActionResult GetArticoliByDesc(string filter)
+        public async Task<IActionResult> GetArticoliByDesc(string filter)
         {
             var articoliDto = new List<ArticoliDto>();
-            var articoli = this.articoliRepository.SelArticoliByDescrizione(filter);
+            var articoli = await this.articoliRepository.SelArticoliByDescrizione(filter);
 
             if(!ModelState.IsValid)
             {
