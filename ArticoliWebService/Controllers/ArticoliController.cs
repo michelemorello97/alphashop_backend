@@ -23,6 +23,7 @@ namespace ArticoliWebService.Controllers
 
         [HttpGet("cerca/descrizione/{filter}")]
         [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
         [ProducesResponseType(200, Type = typeof(IEnumerable<ArticoliDto>))]
         public IActionResult GetArticoliByDesc(string filter)
         {
@@ -32,6 +33,11 @@ namespace ArticoliWebService.Controllers
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            if(articoli.Count() == 0)
+            {
+                return NotFound(string.Format("Non è stato trovato alcun articolo con il filtro '{0}'", filter));
             }
 
             foreach(var articolo in articoli)
