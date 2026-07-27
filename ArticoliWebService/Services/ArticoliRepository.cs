@@ -31,12 +31,12 @@ namespace ArticoliWebService.Services
                 .FirstOrDefaultAsync()!;
         }
 
-        public Articoli SelArticoloByEan(string Ean)
+        public async Task<Articoli> SelArticoloByEan(string Ean)
         {
-            return this.alphaShopDbContext.BarCode
+            return await this.alphaShopDbContext.BarCode
                 .Where(b => b.BarCode!.Equals(Ean))
                 .Select(a => a.articolo)
-                .FirstOrDefault()!;
+                .FirstOrDefaultAsync()!;
         }
 
         public async Task<bool> ArticoloExists(string Code)
