@@ -56,5 +56,34 @@ namespace ArticoliWebService.Controllers
 
             return Ok(articoliDto);
         }
+
+
+        [HttpGet("cerca/codice/{CodArt}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200, Type = typeof(ArticoliDto))]
+        public async Task<IActionResult> GetArticoloByCode(string CodArt)
+        {
+            bool retval = await this.articoliRepository.ArticoloExists(CodArt);
+            if(!retval)
+            {
+                return NotFound(string.Format("Non è stato trovato l'articolo con il codice '{0}'", CodArt));
+            }
+
+            var articolo = await this.articoliRepository.SelArticoloByCodice(CodArt);
+
+            var articoliDto = new ArticoliDto
+            {
+                CodArt = articolo.CodArt,
+                Descrizione = articolo.Descrizione,
+                Um = articolo.Um,
+                CodStat = articolo.CodStat,
+                Pzcart = articolo.PzCart,
+                PesoNetto = articolo.PesoNetto,
+                DataCreazione = articolo.DataCreazione
+            };
+
+            return Ok(articoliDto);
+        }
     }
 }

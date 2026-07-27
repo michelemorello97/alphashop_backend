@@ -24,11 +24,11 @@ namespace ArticoliWebService.Services
                 .ToListAsync();
         }
 
-        public Articoli SelArticoloByCodice(string Code)
+        public async Task<Articoli> SelArticoloByCodice(string Code)
         {
-            return this.alphaShopDbContext.Articoli
+            return await this.alphaShopDbContext.Articoli
                 .Where(a => a.CodArt!.Equals(Code))
-                .FirstOrDefault()!;
+                .FirstOrDefaultAsync()!;
         }
 
         public Articoli SelArticoloByEan(string Ean)
@@ -39,9 +39,9 @@ namespace ArticoliWebService.Services
                 .FirstOrDefault()!;
         }
 
-        public bool ArticoloExists(string Code)
+        public async Task<bool> ArticoloExists(string Code)
         {
-            throw new NotImplementedException();
+            return await this.alphaShopDbContext.Articoli.AnyAsync(c => c.CodArt == Code);
         }
 
         public bool DelArticoli(Articoli articolo)

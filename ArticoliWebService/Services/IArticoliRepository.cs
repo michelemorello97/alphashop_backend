@@ -11,7 +11,7 @@ namespace ArticoliWebService.Services
         //metodi di selezione
         Task<IEnumerable<Articoli>> SelArticoliByDescrizione(string Descrizione);
 
-        Articoli SelArticoloByCodice(string Code);
+        Task<Articoli> SelArticoloByCodice(string Code);
 
         Articoli SelArticoloByEan(string Ean);
 
@@ -25,6 +25,6 @@ namespace ArticoliWebService.Services
         bool Salva();
 
         //metodi di info
-        bool ArticoloExists(string Code);
+        Task<bool> ArticoloExists(string Code);
     }
 }
