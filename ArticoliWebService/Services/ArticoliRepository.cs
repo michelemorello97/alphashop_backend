@@ -28,6 +28,7 @@ namespace ArticoliWebService.Services
         {
             return await this.alphaShopDbContext.Articoli
                 .Where(a => a.CodArt!.Equals(Code))
+                .Include(a => a.BarCode)
                 .FirstOrDefaultAsync()!;
         }
 

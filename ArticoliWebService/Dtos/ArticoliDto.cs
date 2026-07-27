@@ -20,5 +20,14 @@ namespace ArticoliWebService.Dtos
         public double? PesoNetto { get; set; }
 
         public DateTime? DataCreazione { get; set; }
+
+        public ICollection<BarCodeDto> Ean { get; set; }
+    }
+
+    public class BarCodeDto
+    {
+        public string BarCode { get; set; }
+
+        public string CodArt { get; set; }
     }
 }
